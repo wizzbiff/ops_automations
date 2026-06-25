@@ -4,7 +4,7 @@ The connectors this repo's tasks rely on, what access each needs, and which task
 
 | Connector | Access | Used by | Notes |
 |-----------|--------|---------|-------|
-| Atlassian (Jira) | read and write | morning_ticket_report, daily_personal_brief | queries tickets, reads links and flags |
+| Atlassian (Jira) | read | morning_ticket_report, daily_personal_brief | queries tickets, reads links and flags |
 | Slack | read and write | morning_ticket_report, daily_personal_brief | posts the report to a channel, sends the brief as a DM to self |
 | Gmail | read | daily_personal_brief | reads mail when mail_source is gmail |
 | Microsoft 365 | read | daily_personal_brief | reads Outlook mail and calendar when mail_source or calendar_source is m365 |
