@@ -1,0 +1,7 @@
+# Personal config, never commit real keys
+config/config.md
+tasks/*/config.md
+
+# Generated reports
+output/*
+!output/.gitkeep
