@@ -2,6 +2,8 @@
 
 This repo is a shared standard. The value comes from everyone running the same definitions, so changes to shared files are deliberate and visible.
 
+This repo is built and maintained with Claude Code. CLAUDE.md holds the session rules and PROJECT_CONTEXT.md holds the roadmap. Read both before building.
+
 ## Conventions
 
 * **Placeholders.** Every value an adopter supplies is written `{{UPPER_SNAKE_CASE}}` and lives only in a `config.example.md`. If you see `{{...}}` in `standards/` or in a task's logic, it is a bug. Reference config by name instead.
