@@ -2,6 +2,14 @@
 
 Versioned history of the standards. Config changes by individuals are not tracked here. Only changes to `standards/` (shared or per domain) and to the repo structure belong in this file, because those affect everyone.
 
+## 1.2.0
+
+Added ticket research, the third engineering task and the first on-demand, parameterized one.
+
+* standards/engineering/research.md: new standard defining what a ready-to-start brief contains and how to gather it: ticket resolution and one-hop link following, Confluence and Slack discovery, GitHub matching by ticket-key convention scoped to an allowlist with an evidence rule for unconfirmed matches, fact-versus-inference synthesis, and per-section caps with clear-state reporting. Reuses the status buckets in definitions.md by pointer.
+* tasks/ticket_research: on-demand task that takes a ticket key or URL, assembles the brief, writes it to output, and posts a short pointer comment back to the ticket. Required connector is Atlassian (Jira) read; Confluence, GitHub, and Slack are enrichment that degrade gracefully.
+* config/connectors.md: restored Atlassian (Jira) write, used only by ticket_research to post one comment on the input ticket, and activated the Confluence and GitHub rows for it.
+
 ## 1.1.0
 
 Added the daily personal brief, the second engineering task.
