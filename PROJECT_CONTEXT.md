@@ -42,6 +42,8 @@ Generated output goes to output/<task>/, gitignored.
 
 **Open decision for when the second domain lands:** today tasks sit flat under tasks/. When executive ops is added, decide whether to also group tasks by domain (tasks/engineering/, tasks/executive/) for symmetry with standards. It is a clean follow on but touches output paths, so it was deferred.
 
+**Open decision on personal_triage.md placement:** standards/engineering/personal_triage.md is personal triage logic that is not strictly engineering. It lives in the engineering domain because its only consumer, daily_personal_brief, is filed there. If a second personal-triage task lands in another domain, graduate this standard to a cross-cutting location rather than copying it.
+
 ## Roadmap
 
 This traces back to the original list from the colleagues plus the domains we discussed.
@@ -49,7 +51,7 @@ This traces back to the original list from the colleagues plus the domains we di
 ### Engineering domain
 
 * **morning_ticket_report. BUILT.** Morning report of blocked, at risk, and stale tickets by team, posted to Slack. Connectors: Atlassian, Slack. (Colleague item: the morning team report sent to leaders.)
-* **daily_personal_brief. PLANNED.** A personal triage digest of the email, Slack messages, and Jira items that need your attention, produced each morning. The output is a digest to yourself, not a team report. Connectors: Gmail or Microsoft 365 (read only), Slack, Atlassian. (Colleague items: the daily brief, and doing everything through Claude rather than logging into each app.)
+* **daily_personal_brief. BUILT.** A personal triage digest of the email, Slack messages, Jira items, and calendar events that need your attention, produced each morning. The output is a digest to yourself, delivered as a Slack DM to self, not a team report. Mail source (Gmail or Microsoft 365, read only) and calendar source (Google Calendar or Outlook) are config-selectable. Connectors: Gmail or Microsoft 365, Slack, Atlassian, Google Calendar or Outlook. Adds the standard standards/engineering/personal_triage.md, which reuses the Jira thresholds in definitions.md. (Colleague items: the daily brief, and doing everything through Claude rather than logging into each app.)
 * **ticket_research. PLANNED.** On demand. Given a ticket, gather its linked Confluence docs, related issues, GitHub pull requests and code context, and relevant Slack threads, then produce a ready to start brief. Connectors: Atlassian, GitHub, Confluence, Slack. (Colleague item: the automation that researches a ticket so you can begin work.)
 * **weekly_leadership_rollup. PLANNED.** Weekly flow and risk summary across teams for leadership. Connectors: Atlassian, Slack.
 

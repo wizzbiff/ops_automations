@@ -55,6 +55,7 @@ ops_automations/
 | Task | Domain | What it does | Cadence | Connectors |
 |------|--------|-------------|---------|------------|
 | morning_ticket_report | engineering | morning report of blocked, at risk, and stale tickets by team | weekday mornings | Atlassian, Slack |
+| daily_personal_brief | engineering | personal triage digest of email, Slack, Jira, and calendar that need your attention | weekday mornings | Gmail or M365, Slack, Atlassian, Google Calendar or Outlook |
 | _planned_ ticket_research | engineering | gathers everything needed to start a ticket: linked docs, pull requests, related issues | on demand | Atlassian, GitHub |
 | _planned_ weekly_leadership_rollup | engineering | weekly flow and risk summary across teams | weekly | Atlassian, Slack |
 | _planned_ board_metrics | executive | assembles the metrics pack for the board | monthly | to be decided |

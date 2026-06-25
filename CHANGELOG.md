@@ -2,6 +2,14 @@
 
 Versioned history of the standards. Config changes by individuals are not tracked here. Only changes to `standards/` (shared or per domain) and to the repo structure belong in this file, because those affect everyone.
 
+## 1.1.0
+
+Added the daily personal brief, the second engineering task.
+
+* standards/engineering/personal_triage.md: new standard defining what counts as needing your attention across email, Slack, Jira, and calendar, plus dedup precedence, deterministic "Start here" ranking, and per-section item caps. Reuses the Blocked, At risk, and Stale thresholds from definitions.md by pointer rather than restating them.
+* tasks/daily_personal_brief: personal morning digest of email, Slack, Jira, and calendar, delivered as a Slack DM to self. Mail source (Gmail or Microsoft 365) and calendar source (Google Calendar or Outlook) are config-selectable.
+* config/connectors.md: added Gmail, Microsoft 365, and Google Calendar rows for the new task.
+
 ## 1.0.0
 
 Initial release.
