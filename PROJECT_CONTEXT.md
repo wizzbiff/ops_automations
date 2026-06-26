@@ -52,7 +52,7 @@ This traces back to the original list from the colleagues plus the domains we di
 
 * **morning_ticket_report. BUILT.** Morning report of blocked, at risk, and stale tickets by team, posted to Slack. Connectors: Atlassian, Slack. (Colleague item: the morning team report sent to leaders.)
 * **daily_personal_brief. BUILT.** A personal triage digest of the email, Slack messages, Jira items, and calendar events that need your attention, produced each morning. The output is a digest to yourself, delivered as a Slack DM to self, not a team report. Mail source (Gmail or Microsoft 365, read only) and calendar source (Google Calendar or Outlook) are config-selectable. Connectors: Gmail or Microsoft 365, Slack, Atlassian, Google Calendar or Outlook. Adds the standard standards/engineering/personal_triage.md, which reuses the Jira thresholds in definitions.md. (Colleague items: the daily brief, and doing everything through Claude rather than logging into each app.)
-* **ticket_research. PLANNED.** On demand. Given a ticket, gather its linked Confluence docs, related issues, GitHub pull requests and code context, and relevant Slack threads, then produce a ready to start brief. Connectors: Atlassian, GitHub, Confluence, Slack. (Colleague item: the automation that researches a ticket so you can begin work.)
+* **ticket_research. BUILT.** On demand. Given a ticket, gather its linked Confluence docs, related issues, GitHub pull requests and code context, and relevant Slack threads, then produce a ready to start brief, written to output and posted as a short pointer comment back to the ticket. The first parameterized task (takes a ticket key or URL at run time) and the first that writes to a source system. Connectors: Atlassian, GitHub, Confluence, Slack. Adds the standard standards/engineering/research.md, which reuses the status buckets in definitions.md. (Colleague item: the automation that researches a ticket so you can begin work.)
 * **weekly_leadership_rollup. PLANNED.** Weekly flow and risk summary across teams for leadership. Connectors: Atlassian, Slack.
 
 ### Executive operations domain (new)
@@ -69,7 +69,7 @@ For traceability, the five things the colleagues described map as follows:
 
 * Daily brief of emails, Slack, and tickets needing attention, to daily_personal_brief.
 * Morning team ticket report sent to leaders, to morning_ticket_report (built).
-* Automation that researches a ticket, to ticket_research.
+* Automation that researches a ticket, to ticket_research (built).
 * Doing everything through Claude instead of logging into each app, covered by the connector set the automations above use, not a separate task.
 * Keeping context in markdown and pointing Claude at the file, which is the method this whole repo and this file embody, not a task.
 
@@ -80,6 +80,7 @@ For traceability, the five things the colleagues described map as follows:
 * **Scheduling.** A scheduled report is a per user Cowork action via /schedule. It runs only while that person's computer is awake and the desktop app is open. Scheduling is not packaged by a plugin and does not run server side. Reliable unattended timing is a separate problem to solve if it becomes a hard requirement.
 * **Distribution.** Reports distribute through Slack, not Outlook. The Microsoft 365 connector is read only and cannot send mail. If a result must reach inboxes, post to a channel people watch or forward it manually.
 * **Connectors.** Connectors are MCP based, authorized once via OAuth, and respect existing permissions. Claude only sees what the connected account can see.
+* **Atlassian write scope.** Atlassian (Jira) was narrowed to read while only the report tasks existed, then restored to read and write when ticket_research landed. The write is used by ticket_research alone, only to post one pointer comment on the ticket being researched. Every other task reads from Atlassian. Keep the grant matched to actual use: narrow it again if ticket_research is ever removed.
 * **Config safety.** Only config.example.md is committed. The real config.md is local per user and gitignored. No project keys, board ids, channels, or handles in committed files.
 * **Conventions.** Placeholders are written {{UPPER_SNAKE_CASE}}. Identifiers (folders, task names, plugin and skill names) use underscores. In the plugin version only, the fence lines at the top of each SKILL.md and command file are mandatory YAML frontmatter syntax.
 * **Research preview.** Cowork plugin support is a research preview and its format moves, especially how connectors attach. Verify the plugin manifests against current Cowork docs before relying on them. This is one more reason the folder library is the safer working surface today.
