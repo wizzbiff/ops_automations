@@ -2,6 +2,14 @@
 
 Versioned history of the standards. Config changes by individuals are not tracked here. Only changes to `standards/` (shared or per domain) and to the repo structure belong in this file, because those affect everyone.
 
+## 1.3.0
+
+Added the weekly leadership rollup, the fourth engineering task and the first weekly one.
+
+* standards/engineering/flow.md: new standard defining the weekly flow and risk view: the trailing business week window, throughput (done and net new this week), cycle time, aging work in flight, persistent blockers, week-over-week trend, and a weekly escalation lens broader than the daily one. Reuses the status buckets, thresholds, classification, and escalation in definitions.md by pointer rather than restating them.
+* tasks/weekly_leadership_rollup: weekly flow and risk summary across teams for leadership, posted to Slack. Computes this week from Jira and derives trend by comparing to the previous run's saved output, degrading to "no prior week to compare" on a first run. Required connectors are Atlassian (read, including status history) and Slack; no Atlassian write.
+* config/connectors.md: added weekly_leadership_rollup to the Atlassian and Slack rows.
+
 ## 1.2.0
 
 Added ticket research, the third engineering task and the first on-demand, parameterized one.
