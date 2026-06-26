@@ -40,7 +40,7 @@ Generated output goes to output/<task>/, gitignored.
 
 **Adding a domain:** create standards/<domain>/ and write its definitions, add its tasks under tasks/, reuse standards/shared/style.md for voice, and update the catalog and CHANGELOG. Nothing in an existing domain changes.
 
-**Open decision for when the second domain lands:** today tasks sit flat under tasks/. When executive ops is added, decide whether to also group tasks by domain (tasks/engineering/, tasks/executive/) for symmetry with standards. It is a clean follow on but touches output paths, so it was deferred.
+**Open decision for when the second domain lands:** today tasks sit flat under tasks/. When executive ops is added, decide whether to also group tasks by domain (tasks/engineering/, tasks/executive/) for symmetry with standards. It is a clean follow on but touches output paths, so it was deferred. As of weekly_leadership_rollup there are four flat engineering tasks (morning_ticket_report, daily_personal_brief, ticket_research, weekly_leadership_rollup), so the move would touch four task folders and their output paths. The trigger is still the executive domain landing, not the task count, but note the count is growing: the regroup gets more mechanical the longer it waits.
 
 **Open decision on personal_triage.md placement:** standards/engineering/personal_triage.md is personal triage logic that is not strictly engineering. It lives in the engineering domain because its only consumer, daily_personal_brief, is filed there. If a second personal-triage task lands in another domain, graduate this standard to a cross-cutting location rather than copying it.
 
