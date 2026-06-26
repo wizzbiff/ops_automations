@@ -4,8 +4,8 @@ The connectors this repo's tasks rely on, what access each needs, and which task
 
 | Connector | Access | Used by | Notes |
 |-----------|--------|---------|-------|
-| Atlassian (Jira) | read and write | morning_ticket_report, daily_personal_brief, ticket_research | queries tickets, reads links and flags; write used only by ticket_research, to post one research brief comment on the input ticket |
-| Slack | read and write | morning_ticket_report, daily_personal_brief, ticket_research | posts the report to a channel, sends the brief as a DM to self; ticket_research reads threads only |
+| Atlassian (Jira) | read and write | morning_ticket_report, daily_personal_brief, ticket_research, weekly_leadership_rollup | queries tickets, reads links, flags, and status history; write used only by ticket_research, to post one research brief comment on the input ticket |
+| Slack | read and write | morning_ticket_report, daily_personal_brief, ticket_research, weekly_leadership_rollup | posts the report to a channel, sends the brief as a DM to self; ticket_research reads threads only |
 | Gmail | read | daily_personal_brief | reads mail when mail_source is gmail |
 | Microsoft 365 | read | daily_personal_brief | reads Outlook mail and calendar when mail_source or calendar_source is m365 |
 | Google Calendar | read | daily_personal_brief | reads today's events when calendar_source is google |
