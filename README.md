@@ -61,7 +61,7 @@ ops_automations/
 | daily_personal_brief | engineering | personal triage digest of email, Slack, Jira, and calendar that need your attention | weekday mornings | Gmail or M365, Slack, Atlassian, Google Calendar or Outlook |
 | ticket_research | engineering | gathers everything needed to start a ticket: linked docs, related issues, pull requests and code, and Slack threads, into a ready-to-start brief | on demand | Atlassian, Confluence, GitHub, Slack |
 | weekly_leadership_rollup | engineering | weekly flow and risk rollup across teams: throughput, cycle time, aging, and week-over-week trend for leadership | weekly | Atlassian, Slack |
-| _planned_ board_metrics | executive | assembles the metrics pack for the board | monthly | to be decided |
+| board_metrics | executive | assembles the board metrics pack: financials, growth, and quarter-to-date OKR progress, with month-over-month trend | monthly | Looker, NetSuite, Atlassian, Slack |
 
 Keep this table current. It is the first thing a new adopter reads.
 

@@ -57,7 +57,7 @@ This traces back to the original list from the colleagues plus the domains we di
 
 ### Executive operations domain (new)
 
-* **board_metrics. PLANNED.** Assembles the metrics pack for the board. Monthly cadence. Standard: standards/executive/board_metrics.md, defining each metric, how it is calculated, the period it covers, and what counts as on track. Sources: the org data or BI layer and finance systems, to be decided. Reuses standards/shared/style.md so the board pack reads in the same voice as the engineering reports.
+* **board_metrics. BUILT.** Assembles the monthly board metrics pack and posts the summary and board-attention pointer to a private leadership channel. Sources resolved: growth and product metrics from Looker, financials from NetSuite, OKRs from Jira. The standard standards/executive/board_metrics.md defines each metric, key-result health by pace to target, month-over-month trend, the needs-board-attention lens, and the source-query patterns; it incorporates the OKR framework as the framing for the strategic-progress section while a separate metrics section carries the hard numbers. Reuses standards/shared/style.md for voice. First task to read a BI layer and a finance system, and the first not to use the shared config/config.md. Connectors: Looker, NetSuite, Atlassian, Slack. Looker and NetSuite are not in the default connector set and must be added in Cowork before the task runs. Artifacts ready to install and test in Cowork.
 
 ### Future domains
 
