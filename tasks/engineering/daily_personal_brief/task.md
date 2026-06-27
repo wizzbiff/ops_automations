@@ -8,13 +8,13 @@ Run the daily personal brief.
 
 **Step 1. Load everything.** Read these files in full before doing anything else, and treat them as the source of truth:
 * config/config.md, for the Jira status mapping. Personal triage reuses the same buckets the team report uses.
-* tasks/daily_personal_brief/config.md, for your personal values: mail and calendar source, your handles, important senders, Slack scopes, the brief timezone, and the Slack target the brief is delivered to.
+* tasks/engineering/daily_personal_brief/config.md, for your personal values: mail and calendar source, your handles, important senders, Slack scopes, the brief timezone, and the Slack target the brief is delivered to.
 * standards/engineering/personal_triage.md, for what counts as needing your attention, the dedup rules, the ranking, and the item caps.
 * standards/engineering/definitions.md, for the Blocked, At risk, and Stale classification and thresholds the Jira section reuses.
 * standards/shared/style.md, for tone and formatting.
-* tasks/daily_personal_brief/brief_template.md, for the output shape.
+* tasks/engineering/daily_personal_brief/brief_template.md, for the output shape.
 
-If either config/config.md or tasks/daily_personal_brief/config.md does not exist, stop and say so. The system is not configured. If `mail_source` or `calendar_source` is unset or not a recognized value, treat it as missing required config and stop.
+If either config/config.md or tasks/engineering/daily_personal_brief/config.md does not exist, stop and say so. The system is not configured. If `mail_source` or `calendar_source` is unset or not a recognized value, treat it as missing required config and stop.
 
 **Step 2. Gather.** Pull from each source for the window in personal_triage.md, computing "today" and the lookback in the `brief_timezone` from config:
 * Mail: branch on `mail_source`. If `gmail`, read unread and recent threads through the Gmail connector. If `m365`, read them through the Microsoft 365 connector. Use only the selected connector.
@@ -42,7 +42,7 @@ If either config/config.md or tasks/daily_personal_brief/config.md does not exis
 
 * Wrong things surfaced as needing attention, wrong dedup, ranking, or caps: fix standards/engineering/personal_triage.md, so every personal brief gets the correction.
 * Wrong Jira thresholds for blocked, at risk, or stale: fix standards/engineering/definitions.md, so the team report and this brief stay aligned.
-* Wrong mail or calendar source, handles, important senders, channels, timezone, or delivery target: fix your own tasks/daily_personal_brief/config.md.
+* Wrong mail or calendar source, handles, important senders, channels, timezone, or delivery target: fix your own tasks/engineering/daily_personal_brief/config.md.
 * Wrong Jira status names: fix your own config/config.md.
 * Wrong shape or length: fix this folder's brief_template.md.
 * Wrong tone across all reports: fix standards/shared/style.md.

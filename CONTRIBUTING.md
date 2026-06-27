@@ -25,14 +25,16 @@ If only your team needs a different value, that is usually a sign it belongs in 
 ## Adding a domain
 
 1. Create `standards/your_domain/` and write its definitions there. Reuse `standards/shared/style.md` for tone rather than restating it.
-2. Add the domain's tasks under `tasks/`, each copied from the template and pointed at the new domain standard.
+2. Add the domain's tasks under `tasks/your_domain/`, each copied from the template and pointed at the new domain standard.
 3. Update the task catalog in the README and add a CHANGELOG note.
 
 Nothing in an existing domain changes when you add another.
 
 ## Adding a task
 
-1. Copy `tasks/_task_template/` to `tasks/your_task_name/`.
+Tasks are grouped by domain under `tasks/<domain>/`, mirroring `standards/`. Output stays flat at `output/<task>/`.
+
+1. Copy `tasks/_task_template/` to `tasks/<domain>/your_task_name/`.
 2. Replace every bracketed field in task.md, the output template, and the README.
 3. Reuse existing definitions and style. Only add to `standards/` if a genuinely new shared concept is needed.
 4. Record required connectors in config/connectors.md.

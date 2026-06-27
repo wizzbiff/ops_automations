@@ -41,10 +41,13 @@ ops_automations/
       output_template.md
       README.md
       config.example.md           optional per task overrides
-    morning_ticket_report/        an engineering domain task
-      task.md                     the instruction the scheduled task runs
-      report_template.md          this task's output shape
-      README.md                   what it does, cadence, connectors
+    engineering/                  tasks grouped by domain, mirroring standards/
+      morning_ticket_report/      an engineering domain task
+        task.md                   the instruction the scheduled task runs
+        report_template.md        this task's output shape
+        README.md                 what it does, cadence, connectors
+    executive/
+      board_metrics/              the executive domain's metrics pack
 
   output/                        generated results, per task subfolder. ignored by git
     .gitkeep
@@ -71,7 +74,7 @@ Keep this table current. It is the first thing a new adopter reads.
 
 ## Add a new task to an existing domain
 
-1. Copy `tasks/_task_template/` to `tasks/your_task_name/`.
+1. Copy `tasks/_task_template/` to `tasks/<domain>/your_task_name/`.
 2. Fill in task.md, the output template, and the README. Reuse `standards/shared/style.md` and that domain's standard rather than writing new definitions, so vocabulary stays consistent.
 3. List any new connectors in config/connectors.md.
 4. Add a row to the task catalog above.
@@ -79,7 +82,7 @@ Keep this table current. It is the first thing a new adopter reads.
 ## Add a new domain, for example executive ops
 
 1. Create `standards/your_domain/` and write its definitions there, for example `standards/executive/board_metrics.md`. Reuse `standards/shared/style.md` for tone rather than restating it.
-2. Add that domain's tasks under `tasks/`, each one copied from `_task_template` and pointed at the new domain standard.
+2. Add that domain's tasks under `tasks/your_domain/`, each one copied from `_task_template` and pointed at the new domain standard.
 3. Add the new rows to the task catalog and a CHANGELOG note.
 
 Nothing in the engineering domain changes when you add another. See CONTRIBUTING.md for the full conventions.

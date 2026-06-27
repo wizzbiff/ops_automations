@@ -11,8 +11,8 @@ Run the weekly leadership flow and risk rollup.
 * standards/engineering/definitions.md, for the status buckets, classification, thresholds, and escalation this task builds on.
 * standards/engineering/flow.md, for the week window, throughput, cycle time, aging, trend, and the weekly escalation lens.
 * standards/shared/style.md, for tone and formatting.
-* tasks/weekly_leadership_rollup/rollup_template.md, for the output shape.
-* tasks/weekly_leadership_rollup/config.md, only if it exists, for a distribution override.
+* tasks/engineering/weekly_leadership_rollup/rollup_template.md, for the output shape.
+* tasks/engineering/weekly_leadership_rollup/config.md, only if it exists, for a distribution override.
 
 If config/config.md does not exist, stop and say so. The system is not configured.
 
