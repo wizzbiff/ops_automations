@@ -24,6 +24,16 @@ The first engineering automation, morning_ticket_report, was originally the only
 
 The marketplace is still parked and still not the source of truth; this sync was a deliberate choice to keep parity even though the promotion gate below (standards settled, more than one runner) is not yet met. Two things were decided in the sync and may want revisiting: the per-command config (personal, research, board) was folded into the marketplace's single shared config.example.md as self-contained sections rather than separate per-plugin files, to match the marketplace's one-local-config model; and because standards are still moving, expect to re-sync the marketplace whenever a library standard changes.
 
+## Marketplace sync model
+
+ops_marketplace is downstream of this library, not a peer. The relationship, written down so a future session does not have to reconstruct it:
+
+* **One source of truth.** Author standards and tasks here, in ops_automations. The marketplace is a derived packaging of the same content as Cowork plugins (standards become skills, tasks become commands). Never author in the marketplace and back-port; that would make the copy the source.
+* **One-directional, manual, unenforced.** Nothing links the two repos. A change here does not propagate; it leaves the marketplace silently stale until someone re-ports it by hand. There is no error and no warning on drift, so a library edit is also an implicit to-do against the marketplace.
+* **A re-sync is a transformation, not a copy.** A standard becomes a SKILL.md with a load-trigger description; a task.md plus its template become one command file; repo-relative path pointers become skill-name references; and the per-task config.md files collapse into the marketplace's single shared config.md as sections. Judgement each time, so it cannot be fully scripted.
+* **"In sync" is a snapshot.** Parity holds only at the moment of a sync (most recent: 2026-06-28, wizzbiff/ops_marketplace PR #1). The next library change makes it stale again.
+* **Parked by design.** Per the promotion gate in Key decisions below, the marketplace stays parked while standards are still moving. Accept that it lags; catch it up deliberately in a dedicated sync rather than paying the port tax on every edit. Re-sync when standards settle, or when you decide to promote.
+
 ## Repo structure and the scaling rule (summary, see README and CONTRIBUTING for detail)
 
 The rule: anything shared across domains lives in the shared layer; anything specific to one domain lives in that domain's files.
