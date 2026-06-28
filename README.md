@@ -1,14 +1,12 @@
 # Ops Automations
 
-A versioned library of Claude Cowork automations across operational domains. Each automation reads your tools, applies a shared standard, and produces a report or a result. Engineering operations is the first domain. Others, such as executive operations, drop in beside it without disturbing what already works.
-
-Suggested repo name: `ops_automations`. Rename the root folder to whatever fits your org.
+A versioned library of Claude Cowork automations across operational domains. Each automation reads your tools, applies a shared standard, and produces a report or a result. Engineering operations is the original domain. Others, such as executive operations, drop in beside it without disturbing what already works.
 
 ## The rule that makes this scale
 
-Anything shared across domains lives in the shared layer. Anything specific to one domain lives in that domain's own files. That single boundary is what keeps the repo from turning into copies of the same definitions drifting apart as it grows.
+Anything common across domains lives in the shared layer. Anything specific to one domain lives in that domain's own files. This boundary keeps the repo from turning into copies of the same definitions drifting apart as it grows.
 
-It produces four kinds of content:
+There are four kinds of content:
 
 * **Shared standard** (`standards/shared/`). Identical for every domain. Tone and formatting that every report should follow. Nobody edits this to adopt the system.
 * **Domain standard** (`standards/<domain>/`). The definitions and thresholds for one domain, for example engineering ticket health. A domain's tasks read its own standard, not another domain's.
