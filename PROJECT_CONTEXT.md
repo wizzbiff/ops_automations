@@ -20,7 +20,9 @@ Two parallel artifacts, both already built.
 * **ops_automations** (the folder library). This is the source of truth and the baseline repo. You edit and run this. Structure: a shared layer plus per domain standards and tasks.
 * **ops_marketplace** (the plugin marketplace). A parallel packaging of the same content as a Cowork plugin marketplace. Parked. Do not treat it as source of truth. Promote it later, as its own separate repo, only when both promotion conditions below are true.
 
-The first engineering automation, morning_ticket_report, is built in both.
+The first engineering automation, morning_ticket_report, was originally the only one built in both. **As of 2026-06-28 the marketplace was brought back to full parity with the library.** All four engineering tasks (morning_ticket_report, daily_personal_brief, ticket_research, weekly_leadership_rollup) and the executive board_metrics task now exist as plugins: engineering_ops 2.0.0 (its three new tasks ported as commands plus the personal_triage, research, and flow standards as skills) and the new executive_ops 1.0.0 (board_metrics standard as a skill, board_pack command). Delivered via wizzbiff/ops_marketplace PR #1.
+
+The marketplace is still parked and still not the source of truth; this sync was a deliberate choice to keep parity even though the promotion gate below (standards settled, more than one runner) is not yet met. Two things were decided in the sync and may want revisiting: the per-command config (personal, research, board) was folded into the marketplace's single shared config.example.md as self-contained sections rather than separate per-plugin files, to match the marketplace's one-local-config model; and because standards are still moving, expect to re-sync the marketplace whenever a library standard changes.
 
 ## Repo structure and the scaling rule (summary, see README and CONTRIBUTING for detail)
 
