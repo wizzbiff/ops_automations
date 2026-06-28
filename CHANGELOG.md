@@ -2,6 +2,15 @@
 
 Versioned history of the standards. Config changes by individuals are not tracked here. Only changes to `standards/` (shared or per domain) and to the repo structure belong in this file, because those affect everyone.
 
+## 2.0.0
+
+Added the executive operations domain and its first task, and regrouped tasks by domain. Major version because the task tree structure changed.
+
+* Structure: tasks moved from the flat `tasks/<task>/` layout to `tasks/<domain>/<task>/`, mirroring `standards/`, now that a second domain exists. The four engineering tasks now live under `tasks/engineering/`; their internal path references were rewritten. Generated output stays flat at `output/<task>/`, and `tasks/_task_template/` stays at the `tasks/` root. README, CONTRIBUTING, and the add_task/add_domain commands were updated to the grouped layout, and the previously deferred grouping decision is recorded as resolved in PROJECT_CONTEXT.
+* standards/executive/board_metrics.md: new domain standard. Defines the board pack's metric catalog (financial from NetSuite, growth and product from Looker), monthly cadence with quarter-to-date OKRs, key-result health by pace to target (achieved / on track / at risk / off track / not started), trend versus the prior pack, a needs-board-attention escalation lens, and the source-query patterns for Looker, NetSuite, and Jira. Reuses standards/shared/style.md for voice. The OKR-health rules live here for now; graduate them to standards/executive/okr.md if a second OKR-consuming task lands.
+* tasks/executive/board_metrics: monthly board metrics pack. Reads Looker, NetSuite, and Jira, computes metrics, key-result health, and month-over-month trend (degrading to "no prior month to compare" on a first run), writes the pack to output, and posts the summary and board-attention pointer to a private leadership channel. First task that reads from a BI layer and a finance system, and the first that does not use the shared config/config.md.
+* config/connectors.md: added Looker (read) and NetSuite (read) for board_metrics, added board_metrics to the Atlassian and Slack rows, and noted that Looker and NetSuite are not in the default connector set and must be added in Cowork.
+
 ## 1.3.0
 
 Added the weekly leadership rollup, the fourth engineering task and the first weekly one.

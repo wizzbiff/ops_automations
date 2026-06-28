@@ -10,7 +10,7 @@ Run the morning team ticket report.
 * config/config.md, for teams, status mapping, and distribution.
 * standards/engineering/definitions.md, for classification, thresholds, escalation, and audience rules.
 * standards/shared/style.md, for tone and formatting.
-* tasks/morning_ticket_report/report_template.md, for the output shape.
+* tasks/engineering/morning_ticket_report/report_template.md, for the output shape.
 
 If config/config.md does not exist, stop and say so. The system is not configured.
 

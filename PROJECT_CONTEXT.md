@@ -32,15 +32,15 @@ Shared, common to every domain:
 
 Domain specific:
 * standards/<domain>/, definitions and thresholds for that domain, for example standards/engineering/definitions.md.
-* tasks/<task>/, one self contained folder per automation: task.md (orchestration), an output template, a README. It reads the shared style, its domain standard, and config. It never copies them.
+* tasks/<domain>/<task>/, one self contained folder per automation, grouped by domain to mirror standards/: task.md (orchestration), an output template, a README. It reads the shared style, its domain standard, and config. It never copies them. Generated output stays flat at output/<task>/.
 
 Generated output goes to output/<task>/, gitignored.
 
-**Adding a workflow to an existing domain:** copy tasks/_task_template/ to tasks/<name>/, fill it in, point it at standards/shared/style.md and the domain standard, list connectors in config/connectors.md, and add a row to the task catalog in README.
+**Adding a workflow to an existing domain:** copy tasks/_task_template/ to tasks/<domain>/<name>/, fill it in, point it at standards/shared/style.md and the domain standard, list connectors in config/connectors.md, and add a row to the task catalog in README.
 
-**Adding a domain:** create standards/<domain>/ and write its definitions, add its tasks under tasks/, reuse standards/shared/style.md for voice, and update the catalog and CHANGELOG. Nothing in an existing domain changes.
+**Adding a domain:** create standards/<domain>/ and write its definitions, add its tasks under tasks/<domain>/, reuse standards/shared/style.md for voice, and update the catalog and CHANGELOG. Nothing in an existing domain changes.
 
-**Open decision for when the second domain lands:** today tasks sit flat under tasks/. When executive ops is added, decide whether to also group tasks by domain (tasks/engineering/, tasks/executive/) for symmetry with standards. It is a clean follow on but touches output paths, so it was deferred. As of weekly_leadership_rollup there are four flat engineering tasks (morning_ticket_report, daily_personal_brief, ticket_research, weekly_leadership_rollup), so the move would touch four task folders and their output paths. The trigger is still the executive domain landing, not the task count, but note the count is growing: the regroup gets more mechanical the longer it waits.
+**Resolved when the executive domain landed: tasks are now grouped by domain.** When board_metrics added the executive domain, the previously deferred decision was taken: tasks moved from the flat tasks/<task>/ layout to tasks/<domain>/<task>/ (tasks/engineering/ and tasks/executive/) for symmetry with standards/. Output deliberately stayed flat at output/<task>/, since task names are unique and the dirs are gitignored, so nothing about output paths actually had to change. tasks/_task_template/ stayed at the tasks/ root because it is domain agnostic. The four engineering tasks' internal path references were rewritten in the same move.
 
 **Open decision on personal_triage.md placement:** standards/engineering/personal_triage.md is personal triage logic that is not strictly engineering. It lives in the engineering domain because its only consumer, daily_personal_brief, is filed there. If a second personal-triage task lands in another domain, graduate this standard to a cross-cutting location rather than copying it.
 
@@ -57,7 +57,7 @@ This traces back to the original list from the colleagues plus the domains we di
 
 ### Executive operations domain (new)
 
-* **board_metrics. PLANNED.** Assembles the metrics pack for the board. Monthly cadence. Standard: standards/executive/board_metrics.md, defining each metric, how it is calculated, the period it covers, and what counts as on track. Sources: the org data or BI layer and finance systems, to be decided. Reuses standards/shared/style.md so the board pack reads in the same voice as the engineering reports.
+* **board_metrics. BUILT.** Assembles the monthly board metrics pack and posts the summary and board-attention pointer to a private leadership channel. Sources resolved: growth and product metrics from Looker, financials from NetSuite, OKRs from Jira. The standard standards/executive/board_metrics.md defines each metric, key-result health by pace to target, month-over-month trend, the needs-board-attention lens, and the source-query patterns; it incorporates the OKR framework as the framing for the strategic-progress section while a separate metrics section carries the hard numbers. Reuses standards/shared/style.md for voice. First task to read a BI layer and a finance system, and the first not to use the shared config/config.md. Connectors: Looker, NetSuite, Atlassian, Slack. Looker and NetSuite are not in the default connector set and must be added in Cowork before the task runs. Artifacts ready to install and test in Cowork.
 
 ### Future domains
 

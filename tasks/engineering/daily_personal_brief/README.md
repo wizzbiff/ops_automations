@@ -7,7 +7,7 @@ Pulls your email, Slack, Jira, and calendar each morning, keeps only what needs 
 * Cadence: weekday mornings
 * Requires connectors: Gmail or Microsoft 365 (your choice), Slack, Atlassian, and Google Calendar or Outlook (your choice)
 * Reads standards: personal_triage.md, definitions.md, style.md
-* Reads config: config/config.md (Jira status mapping) and tasks/daily_personal_brief/config.md (your personal values)
+* Reads config: config/config.md (Jira status mapping) and tasks/engineering/daily_personal_brief/config.md (your personal values)
 * Writes to: output/daily_personal_brief/
 
 ## Run it

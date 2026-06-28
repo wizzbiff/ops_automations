@@ -7,14 +7,14 @@ On demand, given a ticket, gathers its linked Confluence docs, related issues, G
 * Cadence: on demand
 * Requires connectors: Atlassian (Jira and Confluence), GitHub, Slack
 * Reads standards: research.md, style.md (definitions.md optionally, to label related-issue status)
-* Reads config: tasks/ticket_research/config.md (config/config.md optional)
+* Reads config: tasks/engineering/ticket_research/config.md (config/config.md optional)
 * Writes to: output/ticket_research/, and one comment on the input ticket
 
 ## Run it
 
 1. Authorize the connectors in Cowork: Atlassian, GitHub, and Slack.
 2. Copy this folder's config.example.md to config.md and fill it in: the GitHub repo allowlist, optional Confluence spaces and Slack channels, the comment toggle, and the caps.
-3. Invoke it with a ticket. Either paste the body of task.md into a Cowork task and fill the Ticket field with a Jira key or URL, or ask in natural language, for example "research PROJ-123 using tasks/ticket_research/task.md".
+3. Invoke it with a ticket. Either paste the body of task.md into a Cowork task and fill the Ticket field with a Jira key or URL, or ask in natural language, for example "research PROJ-123 using tasks/engineering/ticket_research/task.md".
 4. Read the brief in output/ticket_research/, and the pointer comment on the ticket if the toggle is on.
 
 ## Notes
